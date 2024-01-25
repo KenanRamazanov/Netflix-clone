@@ -1,7 +1,10 @@
 import Input from '@/components/Input'
-import React from 'react'
+import React, { useState } from 'react'
 
 const auth = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <div
    className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-cover "
