@@ -45,6 +45,11 @@ const auth = () => {
                
                />
         </div>
+
+        <button className='bg-red-700 py-3
+             text-white hover:bg-red-800 transition
+            rounded-md w-full mt-10'>
+        </button>
        </div>
    </div>
 
