@@ -1,5 +1,6 @@
 import Input from '@/components/Input'
 import React, { useState } from 'react'
+import { FaGoogle } from 'react-icons/fa';
 
 const auth = () => {
   const [name, setName] = useState('');
@@ -50,6 +51,13 @@ const auth = () => {
           rounded-md w-full mt-10'>
 Sign up
         </button>
+
+        <div className='flex flex-row items-center gap-4 mt-10 justify-center'>
+         <div  className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
+         <FaGoogle size={30}></FaGoogle>
+         </div>
+        </div>
+
        </div>
    </div>
 
