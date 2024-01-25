@@ -1,3 +1,4 @@
+import Input from '@/components/Input'
 import React from 'react'
 
 const auth = () => {
@@ -18,7 +19,7 @@ const auth = () => {
           Register
         </h2>
         <div className='flex flex-col gap-4'>
-         
+          <Input/>
         </div>
        </div>
    </div>
