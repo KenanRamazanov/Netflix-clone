@@ -22,7 +22,13 @@ const auth = () => {
           Register
         </h2>
         <div className='flex flex-col gap-4'>
-          <Input/>
+          <Input
+          id='name'
+          value={name} 
+          label='Fullname'
+          onChange={(e:any)=>setName(e.target.value)}
+          type='text'
+          />
         </div>
        </div>
    </div>
