@@ -29,6 +29,21 @@ const auth = () => {
           onChange={(e:any)=>setName(e.target.value)}
           type='text'
           />
+           <Input id='email'
+               value={email} 
+               label='Email Address'
+               onChange={(e:any)=>setEmail(e.target.value)}
+               type='email'
+               
+               />
+
+              <Input id='password'
+               value={password} 
+               label='Password'
+               onChange={(e:any)=>setPassword(e.target.value)}
+               type='text'
+               
+               />
         </div>
        </div>
    </div>
