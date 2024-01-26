@@ -1,11 +1,33 @@
 import Input from '@/components/Input'
-import React, { useState } from 'react'
+import { useRouter } from 'next/router';
+import React, { useCallback, useState } from 'react'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const auth = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [variant, setVariant] = useState('login');
+  const router = useRouter();
+  const toogleVariant = useCallback(()=> {
+setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
+  },[])
+
+  const login = useCallback(async()=>{
+  try {
+    
+  } catch (error) {
+    
+  }
+  },[])
+
+  const register = useCallback(async()=>{
+    try {
+      
+    } catch (error) {
+      
+    }
+    },[])
   return (
     <div
    className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-cover "
@@ -53,14 +75,24 @@ Sign up
         </button>
 
         <div className='flex flex-row items-center gap-4 mt-10 justify-center'>
+        
          <div  className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
          <FaGoogle size={30}/>
          </div>
+         
          <div  className='bg-white flex text-black w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
          <FaGithub size={30}/>
          </div>
-        </div>
 
+        </div>
+        <p className='text-neutral-600 mt-12'>
+        {variant == 'login' ? 'First time using Netflix ?' :
+              'Allready have an account'}
+              <span onClick={toogleVariant}
+              className='text-white ml-2 cursor-pointer hover:underline transition'>
+               {variant ==='login' ? 'Create an account' : 'Login'}
+        </span>
+        </p>
        </div>
    </div>
 
