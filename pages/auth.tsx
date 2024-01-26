@@ -42,16 +42,20 @@ setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
    <div className='flex justify-center'>
        <div className='bg-black bg-opacity-85 px-20 py-20 self-center mt-2 lg:w-2/5 rounded-xl w-full'>
         <h2 className='text-white text-5xl mb-8 font-semibold'>
-          Register
+        {variant === 'login' ? 'Sign-in' : 'Register'}
         </h2>
         <div className='flex flex-col gap-4'>
-          <Input
-          id='name'
+        {variant == 'register' && (
+
+         <Input id='name'
           value={name} 
           label='Fullname'
           onChange={(e:any)=>setName(e.target.value)}
           type='text'
-          />
+
+/>
+
+)}
            <Input id='email'
                value={email} 
                label='Email Address'
@@ -69,9 +73,9 @@ setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
                />
         </div>
 
-        <button className='bg-red-700 py-3 text-white hover:bg-red-800 transition
+        <button onClick={variant === 'login' ? login :register} className='bg-red-700 py-3 text-white hover:bg-red-800 transition
           rounded-md w-full mt-10'>
-Sign up
+              {variant ==='login' ? 'Login': 'Sign up'}
         </button>
 
         <div className='flex flex-row items-center gap-4 mt-10 justify-center'>
