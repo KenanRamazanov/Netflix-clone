@@ -7,7 +7,6 @@ import React, { useCallback, useState } from 'react'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 
-
 export async function getServerSideProps(context: NextPageContext) {
 
   const session = await getSession(context);
