@@ -1,4 +1,6 @@
 import Input from '@/components/Input'
+import axios from 'axios';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -13,21 +15,44 @@ const auth = () => {
 setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
   },[])
 
-  const login = useCallback(async()=>{
-  try {
-    
-  } catch (error) {
-    
-  }
-  },[])
-
-  const register = useCallback(async()=>{
+  const login = useCallback(async ()=>{
     try {
+     
+      await signIn('credentials',{
+        email,
+        password,
+        redirect:false,
+        callbackUrl:'/'
+
+
+      });
+
+      router.push('/profiles');
       
     } catch (error) {
+      console.log(error)
       
     }
-    },[])
+
+  },[email, password, router]);
+  
+  const register = useCallback(async ()=>{
+    try {
+     
+      await axios.post('/api/register',{
+        email,
+        name,
+        password
+      });
+
+      login();
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+
+  }, [email, name, password, login]);
   return (
     <div
    className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-cover "
