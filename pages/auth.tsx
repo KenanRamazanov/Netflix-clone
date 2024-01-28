@@ -131,7 +131,7 @@ setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
          <FaGoogle size={30}/>
          </div>
          
-         <div  className='bg-white flex text-black w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
+         <div onClick={()=>signIn('github', {callbackUrl:'/profiles'})} className='bg-white flex text-black w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
          <FaGithub size={30}/>
          </div>
 
