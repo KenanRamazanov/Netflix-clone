@@ -127,7 +127,7 @@ setVariant((currentVariant)=>currentVariant==='login'? 'register':'login');
 
         <div className='flex flex-row items-center gap-4 mt-10 justify-center'>
         
-         <div  className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
+        <div onClick={()=>signIn('google', {callbackUrl:'/profiles'})} className='bg-white flex text-red-700 w-12 h-12 rounded-full items-center text-center cursor-pointer justify-center'>
          <FaGoogle size={30}/>
          </div>
          
