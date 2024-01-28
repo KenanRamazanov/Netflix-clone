@@ -21,7 +21,6 @@ export async function getServerSideProps(context: NextPageContext) {
   
 }
 
-
 const profiles = () => {
 
   
