@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { Metadata, NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
@@ -26,14 +27,7 @@ export default function Home() {
 const {data :user} = useCurrentUser();
   return (
     <>
-    <h1 className="text-4xl bg-red-500 font-bolc underline">
-      Hello index
-      
-      </h1>
-      <p className="text-white">
-      {user?.email}
-      </p>
-      <button onClick={()=> signOut()} className="w-full bg-black text-white text-xl">Logout</button>
+   <Navbar></Navbar>
     </>
   );
 }
