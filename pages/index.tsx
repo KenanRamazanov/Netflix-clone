@@ -1,6 +1,6 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { Metadata, NextPageContext } from "next";
-import { getSession } from "next-auth/react";
+import { getSession, signOut } from "next-auth/react";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,10 +30,10 @@ const {data :user} = useCurrentUser();
       Hello index
       
       </h1>
-      <p>
+      <p className="text-white">
       {user?.email}
       </p>
-      <button className="w-full bg-black text-white text-xl">Logout</button>
+      <button onClick={()=> signOut()} className="w-full bg-black text-white text-xl">Logout</button>
     </>
   );
 }
