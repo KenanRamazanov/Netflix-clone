@@ -38,7 +38,7 @@ const toogleAccountMenu = useCallback(() => {
          <div className='cursor-pointer'>
            <BellIcon className='w-5 text-white'></BellIcon>
            </div>
-           <div className='cursor-pointer  flex flex-row ml-auto gap-2 items-center relative'>
+           <div   className='cursor-pointer  flex flex-row ml-auto gap-2 items-center relative'>
             <div className='lg:h-8 lg:w-8 h-6 w-6 rounded-lg overflow-hidden'>
              <img src='/images/default-red.png'></img>
         </div>
