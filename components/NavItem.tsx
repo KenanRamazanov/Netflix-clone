@@ -1,6 +1,9 @@
 import React from 'react'
-
-const NavItem = () => {
+interface ItemProps{
+  name: string;
+  active?: boolean;
+}
+const NavItem:React.FC<ItemProps> = ({name,active}) => {
   return (
     <div>NavItem</div>
   )
