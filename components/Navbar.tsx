@@ -13,7 +13,10 @@ const Navbar = () => {
          <NavItem name='New & Popular' ></NavItem>
          <NavItem name='My List' ></NavItem>
         <NavItem name='Browse My Languages' ></NavItem>
-
+         </div>
+         <div className='relative lg:hidden flex flex-row items-center gap-2 ml-6'>
+         <p className='text-white'>Browse</p>
+         <ChevronDownIcon className='text-white w-5'/>
          </div>
     </div>
    </nav>
