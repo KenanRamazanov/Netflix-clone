@@ -24,6 +24,14 @@ const Navbar = () => {
          <ChevronDownIcon className='text-white w-5 cursor-pointer'/>
          <MobileMenu visible={MobileMenuItem} />
          </div>
+         <div className='flex flex-row ml-auto gap-7 items-center'>
+         <div className='cursor-pointer'>
+         <MagnifyingGlassIcon className='text-white w-5'/>
+         </div>
+         <div className='cursor-pointer'>
+           <BellIcon className='w-5 text-white'></BellIcon>
+           </div>
+        </div>
     </div>
    </nav>
   )
