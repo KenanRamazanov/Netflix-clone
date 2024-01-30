@@ -14,7 +14,9 @@ const AccountMenu: React.FC<AccountProp>=({visible})=> {
     }
 
   return (
-    <div>AccountMenu</div>
+    <div>
+    AccountMenu
+    </div>
   )
 }
 
