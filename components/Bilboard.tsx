@@ -5,7 +5,7 @@ const Bilboard = () => {
     const {data} = useBillboard();
   return (
     <div className='relative h-[32rem]'>
-
+     {data?.title}
     </div>
   )
 }
