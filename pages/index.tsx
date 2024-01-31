@@ -1,3 +1,4 @@
+import Bilboard from "@/components/Bilboard";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { Metadata, NextPageContext } from "next";
@@ -27,7 +28,8 @@ export default function Home() {
 const {data :user} = useCurrentUser();
   return (
     <>
-   <Navbar></Navbar>
+   <Navbar/>
+   <Bilboard/>
     </>
   );
 }
