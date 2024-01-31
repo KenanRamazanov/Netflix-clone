@@ -1,4 +1,5 @@
 import useCurrentUser from '@/hooks/useCurrentUser';
+import { signOut } from 'next-auth/react';
 import React from 'react'
 interface AccountProp{
     visible?:boolean
@@ -22,7 +23,7 @@ const AccountMenu: React.FC<AccountProp>=({visible})=> {
          <p className=' cursor-pointer  text-white text-lg hover:underline'>{user?.name}</p>
       </div>
       <hr className='bg-gray-500 border-0 h-px my-4' />
-      <div onClick={()=>{}} className=' cursor-pointer px-3 text-white text-center hover:underline'>
+      <div onClick={()=>signOut()} className=' cursor-pointer px-3 text-white text-center hover:underline'>
                 Sign out Netflix
             </div>
 
