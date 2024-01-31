@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { BellIcon, ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import NavItem from './NavItem'
 import MobileMenu from './MobileMenu'
@@ -13,9 +13,32 @@ const toogleAccountMenu = useCallback(() => {
   setAccountMenuItem((current) => !current)
 },[])
 const [showBack, setshowBack] = useState(false);
+const topofsset = 65;
+
+useEffect(()=>{
+    const handleScrool=()=>{
+
+        if(window.scrollY >= topofsset)
+        {
+            setshowBack(true)
+        }
+        else{
+            setshowBack(false)
+        }
+
+
+    }
+
+    window.addEventListener('scroll', handleScrool);
+
+    return()=>{
+        window.removeEventListener('scroll',handleScrool)
+    }
+
+}, [])
   return (
    <nav className='w-full fixed z-20'>
-    <div className='px-4 py-6 flex flex-row transition'>
+    <div className={`px-4 py-6 flex flex-row transition  ${showBack ?'bg-zinc-950 bg-opacity-95' : ''}`}>
       <img src="/images/logo.png" className='lg:h-8 h-6' />
       <div className='flex-row lg:flex hidden  gap-7 ml-12'>
          <NavItem name='Home' active></NavItem>
