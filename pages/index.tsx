@@ -1,4 +1,5 @@
 import Bilboard from "@/components/Bilboard";
+import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { Metadata, NextPageContext } from "next";
@@ -30,6 +31,7 @@ const {data :user} = useCurrentUser();
     <>
    <Navbar/>
    <Bilboard/>
+   <MovieList/>
     </>
   );
 }
