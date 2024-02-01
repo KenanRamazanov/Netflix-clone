@@ -1,6 +1,11 @@
+import { MovieInterface } from '@/types';
 import React from 'react'
 
-const MovieCard = () => {
+interface MovieCartProp{
+    data : MovieInterface;
+}
+
+const  MovieCard: React.FC<MovieCartProp>=({data})=> {
   return (
     <div>MovieCard</div>
   )
