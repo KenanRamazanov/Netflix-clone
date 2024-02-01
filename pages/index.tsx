@@ -2,6 +2,7 @@ import Bilboard from "@/components/Bilboard";
 import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import useMovieList from "@/hooks/useMovieList";
 import { Metadata, NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 import { Inter } from "next/font/google";
@@ -26,12 +27,13 @@ export async function getServerSideProps(context: NextPageContext) {
   
 }
 export default function Home() {
-const {data :user} = useCurrentUser();
+const {data:user} = useCurrentUser();
+const {data:movies} = useMovieList();
   return (
     <>
    <Navbar/>
    <Bilboard/>
-   <MovieList/>
+   <MovieList title="Trending" data={movies}/>
     </>
   );
 }
