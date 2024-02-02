@@ -1,7 +1,7 @@
 import { MovieInterface } from '@/types';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react'
-
+import { PlayIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 interface MovieCartProp{
     data : MovieInterface;
 }
@@ -29,7 +29,10 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
                 cursor-pointer' />
             
             <div className='z-20 bg-zinc-800 p-2 lg:p-4 absolute w-full shadow-lg 
-            rounded-b-md'>
+            rounded-b-md'> className
+                <div>
+                <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'></PlayIcon>
+                </div>
                 </div>
          </div>
     </div>
