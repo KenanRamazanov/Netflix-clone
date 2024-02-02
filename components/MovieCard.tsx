@@ -29,8 +29,15 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
                 cursor-pointer' />
             
             <div className='z-20 bg-zinc-800 p-2 lg:p-4 absolute w-full shadow-lg 
-            rounded-b-md'> className
-                <div>
+            rounded-b-md'> 
+                
+                <div className='bg-white
+                 flex items-center justify-center rounded-full   w-7 h-7 lg:w-11 lg:h-11
+                 transition 
+                 border-2
+                 cursor-pointer
+                 border-white
+                 hover:border-neutral-300'>
                 <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'></PlayIcon>
                 </div>
                 </div>
