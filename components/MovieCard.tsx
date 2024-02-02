@@ -20,6 +20,10 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
         shadow-xl rounded-lg
         group-hover:opacity-70
          cursor-pointer'/>
+        <div className='opacity-0 w-full z-20 group-hover:opacity-100
+         absolute top-0 scale-0 group-hover:scale-105 invisible sm:visible'>
+
+         </div>
     </div>
   )
 }
