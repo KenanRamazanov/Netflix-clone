@@ -37,11 +37,9 @@ const {data:movies} = useMovieList();
 
         <div className='p-6'>
       <MovieList title='Trending' data={movies}></MovieList>
-
-
-
       </div>
 
+      <div className='h-96'></div>
     </>
   );
 }
