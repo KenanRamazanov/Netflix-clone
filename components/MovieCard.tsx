@@ -62,10 +62,17 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
                 </div>
 
                    </div>
-                   <p className='text-green-500 text-sm font-semibold mt-4'> 
+                   <p className='text-red-500 text-sm font-semibold mt-4'> 
                   New 
                 <span className='ml-2 text-white'>2024</span>
                 </p>
+
+                <div className='flex flex-row mt-2 gap-2 items-center'>
+                    <p className='text-white text-sm'> {data.duration}</p>
+
+                </div>
+
+
 
                      </div>
             
