@@ -51,7 +51,6 @@ const  MovieList: React.FC<MovieListProps>=({data,title})=> {
 
 </Swiper>
 
-
         </div>
       </div>
 
