@@ -33,7 +33,15 @@ const {data:movies} = useMovieList();
     <>
    <Navbar/>
    <Bilboard/>
-   <MovieList title="Trending" data={movies}/>
+   <div className='lg:mt-44 sm:mt-5'>      </div>
+
+        <div className='p-6'>
+      <MovieList title='Trending' data={movies}></MovieList>
+
+
+
+      </div>
+
     </>
   );
 }
