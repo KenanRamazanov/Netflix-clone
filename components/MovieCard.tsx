@@ -72,7 +72,10 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
 
                 </div>
 
+                <div className='flex flex-row mt-2 gap-2 items-center'>
+                    <p className='text-white text-sm'> {data.genre}</p>
 
+                </div>
 
                      </div>
             
