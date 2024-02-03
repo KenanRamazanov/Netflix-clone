@@ -23,15 +23,17 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
 
         <div className='opacity-0 w-full z-20 group-hover:opacity-100
          absolute top-0 scale-0 group-hover:scale-105 invisible sm:visible'>
-            
+
   <img onClick={redirectToWatch} src={data.thumbnailUrl}  className='h-36 
                 w-full object-cover
                 shadow-xl rounded-lg
                 cursor-pointer' />
-            
-            <div className='z-20 bg-zinc-800 p-2 lg:p-4 absolute w-full shadow-lg 
+
+     <div className='z-20 bg-zinc-800 p-2 lg:p-4 absolute w-full shadow-lg 
             rounded-b-md'> 
-                
+
+           <div className='flex flex-row items-center gap-4'>
+
                 <div className='bg-white
                  flex items-center justify-center rounded-full   w-7 h-7 lg:w-11 lg:h-11
                  transition 
@@ -39,9 +41,29 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
                  cursor-pointer
                  border-white
                  hover:border-neutral-300'>
-                <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'></PlayIcon>
+
+                <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'/>
+
                 </div>
+
+                <div>
+
+                <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'/>
+
                 </div>
+
+                <div className="className='ml-auto  flex items-center justify-center rounded-full 
+                w-7 h-7 lg:w-11 lg:h-11
+                 transition 
+                 border-2
+                 cursor-pointer">
+                <ChevronDownIcon className='text-white w-4 lg:w-6'></ChevronDownIcon>
+                </div>
+
+                   </div>
+                     </div>
+            
+         
          </div>
     </div>
   )
