@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useCallback } from 'react'
 import { PlayIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import FavoriButton from './FavoriButton';
+import useInfoModalStore from '@/hooks/useInfoModalStore';
 interface MovieCartProp{
     data : MovieInterface;
 }
@@ -10,7 +11,7 @@ interface MovieCartProp{
 const  MovieCard: React.FC<MovieCartProp>=({data})=> {
     const router = useRouter();
 
-//   const {openModal} = useInfoModalStore();
+  const {openModal} = useInfoModalStore();
 
   const redirectToWatch  = useCallback(()=> router.push(`/watch/${data.id}`), [router, data.id] )
   return (
