@@ -2,6 +2,7 @@ import Bilboard from "@/components/Bilboard";
 import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import useFavoriMovie from "@/hooks/useFavorites";
 import useMovieList from "@/hooks/useMovieList";
 import { Metadata, NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
@@ -29,6 +30,7 @@ export async function getServerSideProps(context: NextPageContext) {
 export default function Home() {
 const {data:user} = useCurrentUser();
 const {data:movies} = useMovieList();
+const {data:favoriMovie} = useFavoriMovie();
   return (
     <>
    <Navbar/>
@@ -37,6 +39,8 @@ const {data:movies} = useMovieList();
 
         <div className='p-6'>
       <MovieList title='Trending' data={movies}></MovieList>
+      <MovieList title='Favori List' data={favoriMovie}></MovieList>
+
       </div>
 
       <div className='h-96'></div>
