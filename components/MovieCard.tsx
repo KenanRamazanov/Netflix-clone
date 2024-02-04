@@ -2,6 +2,7 @@ import { MovieInterface } from '@/types';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react'
 import { PlayIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
+import FavoriButton from './FavoriButton';
 interface MovieCartProp{
     data : MovieInterface;
 }
@@ -48,7 +49,7 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
 
                 <div>
 
-                <PlayIcon onClick={redirectToWatch} className='text-black w-4 lg:w-6'/>
+                <FavoriButton movieId={data.id}/>
 
                 </div>
 
