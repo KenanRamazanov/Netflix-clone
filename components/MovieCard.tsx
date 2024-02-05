@@ -10,7 +10,7 @@ interface MovieCartProp{
 
 const  MovieCard: React.FC<MovieCartProp>=({data})=> {
     const router = useRouter();
-
+    const {openModal} = useInfoModalStore();
   const redirectToWatch  = useCallback(()=> router.push(`/watch/${data.id}`), [router, data.id] )
   return (
     <div className='group bg-zinc-800 col-span-1 relative h-52'>
@@ -52,7 +52,7 @@ const  MovieCard: React.FC<MovieCartProp>=({data})=> {
 
                 </div>
 
-                <div className="className='ml-auto  flex items-center justify-center rounded-full 
+                <div onClick={()=>openModal(data?.id)} className="className='ml-auto  flex items-center justify-center rounded-full 
                 w-7 h-7 lg:w-11 lg:h-11
                  transition 
                  border-2
