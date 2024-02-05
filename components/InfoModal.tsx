@@ -2,6 +2,8 @@ import useInfoModalStore from '@/hooks/useInfoModalStore';
 import useMovie from '@/hooks/useMovie';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import React, { useCallback, useEffect, useState } from 'react'
+import PlayButton from './PlayButton';
+import FavoriButton from './FavoriButton';
 
 interface InfoModalProps{
     visible?: boolean;
@@ -47,14 +49,37 @@ const InfoModal:React.FC<InfoModalProps>=({visible, onClose})=> {
             <div onClick={handleclose} className='cursor-pointer absolute top-3 right-3 bg-black rounded-full px-2 py-2'>
               <XMarkIcon className='text-white w-6'></XMarkIcon>
             </div>
-            
+            <div className='absolute bottom-44 left-6'>
+              <p className='text-white text-xl md:text-2xl lg:text-4xl'>{data?.title}</p>
+
+              <div className='flex flex-row gap-4 items-center mt-5'>
+                <PlayButton movieId={data.id} key={data.id}></PlayButton>
+                <FavoriButton movieId={data.id} key={data.id}></FavoriButton>
+              
+              </div>
+
+            </div>
              </div>
 
 
 
 
              <div className='px-12 py-10'>
-                 {data?.title}
+                
+             <div className='flex flex-row items-center gap-2 mb-2'> 
+                  <p className='text-green-500 font-semibold text-lg'>New</p>
+            </div>
+            <div className='text-white text-lg font-semibold mb-4'>
+                 {data?.duration}
+            </div>
+
+            <div className='text-white text-lg font-semibold'>
+                 {data?.genre}
+            </div>
+
+            <div className='text-white text-lg font-semibold mt-10'>
+                 {data?.description}
+            </div>
              </div>
             </div>
       </div>
